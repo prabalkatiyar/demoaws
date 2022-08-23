@@ -25,4 +25,9 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            sh './deploy.sh -w demoaws -p /var/lib/jenkins/workspace/demoAwsPipeline2/target'
+        }    
+    }
 }
