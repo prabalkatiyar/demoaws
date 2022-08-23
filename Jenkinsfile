@@ -1,34 +1,9 @@
 pipeline {
-    agent any
-    tools {
-      jdk 'Java-9.0.4'
-      maven 'Maven_3.8.6' 
-    }
     stages {
-        stage('Build') {
+        stage('build') {
             steps {
-                echo 'Building..'
-                sh 'mvn clean compile'
+                sh './test.sh'
             }
         }
-        stage('Test') {
-            steps {
-                echo 'Testing..'
-           
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-                sh 'mvn install'
-                
-            }
-        }
-    }
-    post {
-        success {
-            sh 'chmod 777 deploy.sh'
-            sh './deploy.sh -w demoaws -p /var/lib/jenkins/workspace/demoAwsPipeline2/target'
-        }    
     }
 }
