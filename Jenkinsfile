@@ -23,7 +23,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'mvn install'
-                sh 'sudo chmod 777 deploy.sh'
+                sh 'chmod 777 deploy.sh'
 
                 
             }
