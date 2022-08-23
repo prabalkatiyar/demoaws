@@ -9,16 +9,29 @@ pipeline {
             steps {
                 echo 'Building..'
                 sh 'mvn clean compile'
-                sh 'mvn test'
-                sh 'mvn install'
             }
         }
-
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+                sh 'mvn test'  
+            }
+        }
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-
+                sh 'mvn install'
+                
             }
         }
+        stage('PostDeploy') {
+            steps {
+                echo 'PostDeploying....'
+                sh 'chmod 777 deploy.sh'
+                sh './deploy.sh -w demoaws -p /var/lib/jenkins/workspace/demoAwsPipeline2/target'
+                
+            }
+        }
+        
     }
 }
