@@ -23,14 +23,6 @@ pipeline {
                 sh 'mvn install'
                 
             }
-        }
-        stage('Monitor') {
-            steps {
-                echo 'Monitoring....'
-
-                
-            }
-        }
-        
+        }       
     }
 }
