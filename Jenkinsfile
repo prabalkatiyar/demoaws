@@ -24,7 +24,14 @@ pipeline {
                 
             }
         }
-
+        stage('Monitor') {
+            steps {
+                echo 'Monitoring....'
+                sh 'chmod 777 test.sh'
+                sh './test.sh'
+                
+            }
+        }
         
     }
 }
