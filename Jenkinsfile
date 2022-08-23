@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 sh 'mvn install'
+                sh './deploy.sh'
             }
         }
     }
