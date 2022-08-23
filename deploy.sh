@@ -5,7 +5,8 @@ Date2=`date +%Y%m%d`
 parent_directory="/nfs-vol1/deployement/java"
 #path="/home/prabalkatiyar/HomeFolder/prabalFolder"
 #warfile="rkistatusupdation"
-deploymentpath="/opt/tomcat/apache-tomcat-10.0.23/webapps"
+deploymentpath="/opt/tomcat/apache-tomcat-9.0.65/webapps"
+
 
 while getopts p:w: flag
 do
