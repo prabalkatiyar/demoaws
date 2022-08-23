@@ -8,7 +8,7 @@ pipeline {
         stage('build') {
             steps {
                 echo 'prabal'
-                sh 'chmod 777 deploy.sh'
+                sh 'chmod 777 test.sh'
                 sh './test.sh'
                 
             }
